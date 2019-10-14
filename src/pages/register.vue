@@ -49,12 +49,14 @@ export default {
         .then(res => {
           console.log(res)
           if (res.status === 200) {
-            this.$toast(res.data.message)
+            this.$toast.success(res.data.message)
+          } else {
+            this.$toast.fail('注册失败')
           }
         })
-        .catch(err => { // 因为很多业务的错误信息都差不多，所以这里的catch可以添加到想要拦截
-          console.log(err)
-        })
+        // .catch(err => { // 因为很多业务的错误信息都差不多，所以这里的catch可以添加到想要响应拦截
+        //   console.log(err)
+        // })
     }
   }
 }
