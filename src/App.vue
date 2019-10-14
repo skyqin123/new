@@ -1,28 +1,28 @@
+
 <template>
+
+<!-- // App.vue 文件是一个根组件，日后所以的单组件文件都要引入这里 -->
+
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <h1>这是根组件</h1> -->
+    <router-view></router-view>
+    <!-- <login></login> -->
+
   </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import login from '@/pages/login.vue' //已经用路由跳转了，不用组件显示了
 export default {
-  name: 'app',
   components: {
-    HelloWorld
+    // login
   }
+
 }
 </script>
 
-<style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style>
+/* 引入字体图标，用浏览器的方式来引入，减轻项目体积，但是需要连网 */
+@import url('http://at.alicdn.com/t/font_1426139_h6vn3jbl5q.css')
 </style>
