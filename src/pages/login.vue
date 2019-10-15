@@ -38,7 +38,7 @@ export default {
     return {
       userinfo: {
         username: '',
-        password: ''
+        password: '123456'
       }
     }
   },
@@ -53,6 +53,17 @@ export default {
       login(this.userinfo) // 调用login 实现登录
         .then(res => {
           console.log(res)
+          // 要实现导航守卫就要设置token值，把token值存储在本地
+          if (res.status === 200) {
+            localStorage.setItem('usertoken', res.data.data.token) // 保存token到本地 ，token是用来做导航守卫的
+            localStorage.setItem('id', res.data.data.user.id) // 保存id到本地
+            localStorage.setItem('gender', res.data.data.user.gender) // 保存gender到本地
+            localStorage.setItem('nickname', res.data.data.user.nickname) // 保存nickname到本地
+            localStorage.setItem('username', res.data.data.user.username) // 保存username到本地
+            localStorage.setItem('head_img', res.data.data.user.head_img) // 保存head_img到本地
+
+            this.$router.push({ name: 'Personal' }) // 登录后就可以去访问个人中心页面，当然其他的后台页面也可以，但是要做导航守卫
+          }
         })
         .catch(err => {
           console.log(err)

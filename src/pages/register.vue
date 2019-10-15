@@ -47,7 +47,7 @@ export default {
       console.log(this.userdata)
       register(this.userdata) // 调用register 实现注册
         .then(res => {
-          console.log(res)
+          // console.log(res)
           if (res.status === 200) {
             this.$toast.success(res.data.message)
           } else {

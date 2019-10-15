@@ -19,3 +19,13 @@ export const register = (data) => {
     data
   })
 }
+
+export const getUserInfo = (id) => {
+  return axios({
+    method: 'get',
+    headers: {
+      'Authorization': localStorage.getItem('usertoken')
+    },
+    url: `/user/${id}`
+  })
+}
