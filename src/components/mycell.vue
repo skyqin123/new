@@ -1,8 +1,8 @@
 <template>
-  <div class="cell">
+  <div class="cell" @click = "handleclick">
     <span>{{title}}</span>
     <div class="info">
-      <span>{{desc}}</span>
+      <span>{{type === 'type'? '********': desc}}</span>
       <span class="iconfont iconjiantou1"></span>
     </div>
   </div>
@@ -10,7 +10,12 @@
 
 <script>
 export default {
-  props: ['title', 'desc']
+  props: ['title', 'desc', 'type'],
+  methods: {
+    handleclick (event) {
+      this.$emit('click', event)
+    }
+  }
 
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="personal">
-    <router-link to="/edit_profile">
+    <router-link to="/editProfile">
       <div class="profile">
         <img :src="currnetUser.head_img" alt />
         <div class="profile-center">
@@ -15,10 +15,22 @@
     </router-link>
 
     <div class="list">
-      <mycell title="我的关注" desc="关注的用户"></mycell>
-      <mycell title="我的跟帖" desc="跟帖/回复"></mycell>
-      <mycell title="我的收藏" desc="文章/视频"></mycell>
-      <mycell title="设置"></mycell>
+      <router-link to="/">
+        <mycell title="我的关注" desc="关注的用户"></mycell>
+      </router-link>
+
+      <router-link to="/">
+        <mycell title="我的跟帖" desc="跟帖/回复"></mycell>
+      </router-link>
+
+      <router-link to="/">
+        <mycell title="我的收藏" desc="文章/视频"></mycell>
+      </router-link>
+
+      <router-link to="/">
+        <mycell title="设置"></mycell>
+      </router-link>
+
     </div>
   </div>
 </template>

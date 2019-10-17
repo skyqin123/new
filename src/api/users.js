@@ -24,8 +24,16 @@ export const getUserInfo = (id) => {
   return axios({
     method: 'get',
     headers: {
-      'Authorization': localStorage.getItem('usertoken')
+      // 'Authorization': localStorage.getItem('usertoken') // 在请求拦截里面同一发送token，就不用每个请求都发送token了
     },
     url: `/user/${id}`
+  })
+}
+
+export const updataUserInfo = (id, data) => {
+  return axios({
+    method: 'post',
+    url: `/user_update/${id}`,
+    data
   })
 }

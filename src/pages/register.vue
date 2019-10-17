@@ -11,7 +11,7 @@
     <myinput placeholder="请输入手机号" text="text" v-model="userdata.username" err_msg="请输入合法的手机号"
     :rules="/^1\d{10}$/"></myinput>
 
-    <myinput placeholder="请输入昵称" v-model="userdata.nickanme"></myinput>
+    <myinput placeholder="请输入昵称" v-model="userdata.nickname"></myinput>
 
     <myinput placeholder="请输入密码" :rules="/^\w{6,16}$/" v-model="userdata.password" err_msg="请输入6~16位的任意字符的合法密码"></myinput>
 

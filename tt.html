@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let data1 = {
+      name:'小明',
+      age:""
+    }
+
+Object.defineProperty(data1,'age',{
+    set:function(newAge){
+        console.log(this.name+'现在'+newAge+'岁')
+    },
+    get:function(){
+      alert(123)
+	    return 1111;
+	}
+}) 
+//赋值
+console.log(data1.age)
+  </script>
+</body>
+</html>

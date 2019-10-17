@@ -6,6 +6,9 @@ import VueRouter from 'vue-router'
 import Login from '@/pages/login.vue'
 import Register from '@/pages/register.vue'
 import Personal from '@/pages/personal.vue'
+import EditPersonal from '@/pages/editPersonal.vue'
+import Index from '@/pages/index.vue'
+// import updataUserInfo from '@/pages/editPersonal.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +27,16 @@ const router = new VueRouter({
     name: 'Personal',
     path: '/personal',
     component: Personal
+  },
+  {
+    name: 'EditPersonal',
+    path: '/editProfile',
+    component: EditPersonal
+  },
+  {
+    name: 'Index',
+    path: '/',
+    component: Index
   }
 
   ]

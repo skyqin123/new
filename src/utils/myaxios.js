@@ -9,6 +9,21 @@ axios.defaults.baseURL = 'http://127.0.0.1:3000'
 // 保存axios请求的基准路径到本地方便以后的使用
 localStorage.setItem('baseURL', axios.defaults.baseURL)
 
+// 添加请求拦截器:每一个请求都会经过
+axios.interceptors.request.use(function (config) {
+  // 在发送请求之前做些什么:将token以请求头的方式传递给服务器，服务器可以根据当前的token进行处理
+  // console.log(config)
+  const token = localStorage.getItem('usertoken')
+  if (token) {
+    config.headers.Authorization = token
+  }
+  // 请求并不是拦截器来发送的，它只是发送过程中的一个插曲
+  return config
+}, function (error) {
+  // 对请求错误做些什么
+  return Promise.reject(error)
+})
+
 // 添加响应拦截器
 axios.interceptors.response.use(function (response) {
   // 对响应数据做点什么
