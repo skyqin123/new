@@ -10,3 +10,24 @@ export const getArticalList = (params) => {
     params
   })
 }
+
+export const getArticalDetailById = (id) => {
+  return axios({
+    method: 'get',
+    url: `/post/${id}`
+  })
+}
+
+export const likeThis = (id) => {
+  return axios({
+    method: 'get',
+    url: `/post_like/${id}`
+  })
+}
+
+export const collection = (id) => {
+  return axios({
+    method: 'get',
+    url: `/post_star/${id}`
+  })
+}

@@ -8,6 +8,7 @@ import Register from '@/pages/register.vue'
 import Personal from '@/pages/personal.vue'
 import EditPersonal from '@/pages/editPersonal.vue'
 import Index from '@/pages/index.vue'
+import ArticalDetail from '@/pages/articalDetail.vue'
 // import updataUserInfo from '@/pages/editPersonal.vue'
 
 Vue.use(VueRouter)
@@ -37,6 +38,11 @@ const router = new VueRouter({
     name: 'Index',
     path: '/',
     component: Index
+  },
+  {
+    name: 'ArticalDetail',
+    path: '/ArticalDetail/:id',
+    component: ArticalDetail
   }
 
   ]

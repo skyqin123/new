@@ -37,3 +37,17 @@ export const updataUserInfo = (id, data) => {
     data
   })
 }
+
+export const setMyFocu = (id) => {
+  return axios({
+    method: 'get',
+    url: `/user_follows/${id}`
+  })
+}
+
+export const cancleMyFocu = (id) => {
+  return axios({
+    method: 'get',
+    url: `/user_unfollow/${id}`
+  })
+}
